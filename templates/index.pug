@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title To Do List
+    meta(name='viewport',content='width=device-width,initial-scale=1.0')
+    link(rel='stylesheet', href='./styles/styles.css')
+  body
+    .app
+      header
+        .row
+          .logo
+            img.logo(src='./images/logo.png')
+          h1 To Do
+        form#task-form
+          .row
+            input#task-input(type='text', placeholder='Add a Task')
+            button#task-add(type='submit') Add
+      main
+        ul#task-list
+        
+      script(src='./js/main.js')
