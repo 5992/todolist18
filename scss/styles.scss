@@ -55,31 +55,40 @@ header{
 }
 
 #task-list{
-    @include reset;
-    list-style: none;
-    li{
+  @include reset;
+  list-style: none;
+  li{
 
-        border-bottom: 1px solid #cccccc;
-        .task-container{
-            @include flex(row);
-            justify-content: space-between;
-            .task-name{
-                 padding: 1em;
-            }
-            .task-buttons{
-                @include flex(row);
-                button{
-                    width: 48px;
-                    height: 48px;
-                    font-size: 1.5em;
-                    background-color: transparent;
-                    border: 1px solid transparent;
-                }
-                button:focus{
-                    outline: none;
-                    background-color: #cccccc;
-                }
-            }
-        }
+      border-bottom: 1px solid #cccccc;
+      .task-container{
+          @include flex(row);
+          justify-content: space-between;
+          .task-name{
+               padding: 1em;
+          }
+          .task-buttons{
+              @include flex(row);
+              button{
+                  width: 48px;
+                  height: 48px;
+                  font-size: 1.5em;
+                  background-color: transparent;
+                  border: 1px solid transparent;
+              }
+              button:focus{
+                  outline: none;
+                  background-color: #cccccc;
+              }
+              button[data-function="status"]{
+                font-size:1em;
+              }
+          }
+      }
+  }
+  li[data-status="true"]{
+    .task-name{
+      text-decoration: line-through;
+      opacity: 0.5;
     }
+  }
 }
