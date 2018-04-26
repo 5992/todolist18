@@ -23,6 +23,7 @@ export class TaskManager {
           }
       }
   });
+  this.sort( this.tasks );
   callback();
   }
   delete( id:string, callback ){
@@ -36,7 +37,6 @@ export class TaskManager {
     if ( index_to_remove !== undefined ){
       this.tasks.splice (index_to_remove, 1);
     }
-    this.sort( this.tasks );
     callback();
   }
   sort( tasks: Array<Task>){

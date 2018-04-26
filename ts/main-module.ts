@@ -72,21 +72,17 @@ listelement.addEventListener('click', ( event: Event) => {
           listview.clear();
           listview.render( taskarray );
         });
-        //listview.clear();
-        //listview.reander(taskarray);
       } );
     }
   }
   if (target.getAttribute('data-function') == 'delete'){
     if( id ){
       taskmanager.delete( id, () => {
-        taskstorage.store(taskarray,()=>{
+        taskstorage.store(taskarray, ()=>{
           listview.clear();
           listview.render( taskarray );
         });
-
       });
     }
   }
-
 });
